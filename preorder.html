@@ -5,11 +5,22 @@
 			SDEV 265 Final Project
 			
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
-			Date:   	10/31/2022
+			Date:   	11/4/2022
 			
 			Filename: preorder.html
 			
 			Updates:
+			-Continued working on the preorder form
+				-Roughly halfway finished
+			-Added navigation bar (WIP; L 46)
+			-Added footer (WIP; L 102)
+			
+			Recommendations:
+			-JavaScript
+				-Interactive calendar feature when choosing the expiration data
+				of a credit/debit card
+				-Array containing the initials of all 50 states (for when
+				choosing a state)
 			
 		-->
 		<meta charset="utf-8" >
@@ -29,11 +40,69 @@
       <h5>Ivy Games</h5>
 		</header>		
 
+		<!--
+            Create the navigation bar *WIP*
+        -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="preorder.html">Pre&#8208;order</a></li>
+            </ul>
+        </nav>
+
 		<div class="main">
 			<article>
+				<!--
+					Create the form for customer to enter payment information in;
+					consider researching what a fieldset is and implementing it
+					
+					Suggestion for later: implement javascript(?) that lets the user
+					select from a gui calendar (and also perhaps to automatically get
+					the current date)
+				-->
+				<form>
+					<fieldset>
+						<legend>Enter your payment information below:</legend>
+						<label for="firstName">First Name</label><br>
+							<input type="text" name="firstName" id="firstName" required="required"><br>
+						
+						<label for="lastName">Last Name</label><br>
+							<input type="text" name="lastName" id="lastName" required="required"><br>
+						
+						<label for="address">Street Address</label><br>
+							<input type="text" name="streetAddress" id="address" required="required"><br>
 
+						<!--
+							Spot for list of state abbreviations; make an array in JS maybe?
+						-->
+
+						<label for="zip">Zip code</label><br>
+							<input type="number" name="zipCode" id="zip" required="required"><br>
+
+						<!--
+							Would like to implement 2 radio buttons for "Credit" & "Debit";
+							may have to group these into something for the "for" part of the
+							label
+						-->
+						<label>Card Type</label><br>
+							<label for="creditCard">Credit</label>
+							<input type="radio" name="cardType" id="creditCard" value="credit"><br>
+							<label for="debitCard">Debit</label>
+							<input type="radio" name="cardType" id="debitCard" value="debit"><br>
+						<label for="cardNumber">Card Number<br>
+							<input type="number" name="cardNumber" id="cardNumber" required="required">
+						</label>
+					</fieldset>
+				</form>
 			</article>
 		</div>		
 
 	</body>
+	<footer>
+		<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
+			<br>
+			Solely for educational purposes.
+		</p>
+	</footer>
 </html>
