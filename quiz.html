@@ -5,13 +5,16 @@
 			SDEV 265 Final Project
 			
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
-			Date:   	11/4/2022
+			Date:   	11/9/2022
 			
 			Filename: quiz.html
 			
 			Updates:
-			-Added navigation bar (WIP; L 36)
-			-Added footer (WIP; L 51)			
+			-Added a majority of the quiz content/layout (L 56-141)
+				-Please note that this is not the definitive quiz format,
+				 I remember we talked about possibly showing only one question
+				 onscreen, etc; we can change this how we seet fit, it's just to
+				 give a rudimentary idea as to how the quiz *could* look like.	
 			
 		-->
 		<meta charset="utf-8" >
@@ -41,9 +44,106 @@
             </ul>
         </nav>		
 
+		<!--
+			Current format of the question form:
+			Labels describing the QUESTION will be for "question#"; # = current question
+			Radio buttons will be labeled "q#answer" to distinguish them as the answer
+				for their given question.
+			Labels for the ANSWER RADIO BUTTONS will be for "q#a$"; $ = answer number
+
+			Additionally, consider where we should include character profiles. Including them
+			at the start is fine, although it may skew the user's answers if they know what
+			class to expect being assigned as before receiving their results
+		-->
 		<div class="main">
 			<article>
+				<form>
+					<fieldset>
+						<label for="question1">Question 1: 
+							The world can be a dangerous place, how do you prepare yourself?
+						</label><br>
+							<input type="radio" name="q1answer" id="q1a1" value="1">
+							<label for="q1a1">A. I must be strong, physically and mentally.  
+								Prepared to defend myself and others.
+							</label><br>
+							<input type="radio" name="q1answer" id="q1a2" value="2">
+							<label for="q1a2">B. I must learn all I can, 
+								strength lives or dies on planning.
+							</label><br>
+							<input type="radio" name="q1answer" id="q1a3" value="3">
+							<label for="q1a3">C. It will take the efforts of many to survive, 
+								we must cultivate allies and create hope.
+							</label><br><br>
 
+						<label for="question1">Question 2:
+							You must recover from your injuries, 
+							what is the best use of this time while you cannot physically train?
+						</label><br>
+						<input type="radio" name="q2answer" id="q2a1" value="1">
+						<label for="q2a1">A. I will rest well.  
+							Returning stronger requires patience.
+						</label><br>
+						<input type="radio" name="q2answer" id="q2a2" value="2">
+						<label for="q2a2">B. I will examine how and why this happened to 
+							ensure my training doesn’t lapse again.
+						</label><br>
+						<input type="radio" name="q2answer" id="q2a3" value="3">
+						<label for="q2a3">C. I seek the counsel of my caretakers; 
+							they will make me strong again
+						</label><br><br>
+
+						<label for="question3">Question 3:
+							Why would you seek to learn everything 
+							there is to know about a subject?
+						</label><br>
+						<input type="radio" name="q3answer" id="q3a1" value="1">
+						<label for="q3a1">A. This is what is necessary, that 
+							makes it important.
+						</label><br>
+						<input type="radio" name="q3answer" id="q3a2" value="2">
+						<label for="q3a2">B. Ways of knowing are the key to 
+							advancement for myself and the world
+						</label><br>
+						<input type="radio" name="q3answer" id="q3a3" value="3">
+						<label for="q3a3">C. I have no right to walk among others 
+							without understanding their world
+						</label><br><br>
+
+						<label for="question4">Question 4:
+							Training requires you learn the craft, work with others, 
+							and challenge yourself;<br> What area will you need to 
+							grow the most to reach success?
+						</label><br>
+						<input type="radio" name="q4answer" id="q4a1" value="1">
+						<label for="q4a1">A. I will walk away with a greater 
+							understanding of study.  A fight is not always 
+							won in the ring.
+						</label><br>
+						<input type="radio" name="q4answer" id="q4a2" value="2">
+						<label for="q4a2">B. I have overcome many challenges 
+							before, but this will require more than just me.
+						</label><br>
+						<input type="radio" name="q4answer" id="q4a3" value="3">
+						<label for="q4a3">
+							C. I cannot rely on everyone else all the time, 
+							I must harden my grit to get through.
+						</label><br><br>
+
+						<label for="question5">Question 5: You will rally others, 
+							what in you motivates them?
+						</label><br>
+						<input type="radio" name="q5answer" id="q5a1" value="1">
+						<label for="q5a1">A. They will be inspired by my resolve.
+						</label><br>
+						<input type="radio" name="q5answer" id="q5a2" value="2">
+						<label for="q5a2">B. They will see that I am prepared.
+						</label><br>
+						<input type="radio" name="q5answer" id="q5a3" value="3">
+						<label for="q5a3">C. Their morale is lifted by my presence.
+						</label>
+					</fieldset>
+				</form>
+				
 			</article>
 		</div>		
 
