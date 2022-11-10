@@ -5,17 +5,24 @@
 			SDEV 265 Final Project
 			
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
-			Date:   	11/9/2022
+			Date:   	11/10/2022
 			
 			Filename: quiz.html
 			
 			Updates:
-			-Added a majority of the quiz content/layout (L 56-141)
-				-Please note that this is not the definitive quiz format,
+			-Added the character race-related portion of the quiz (L 157-209)
+				-Like last update, please note that this is not the definitive quiz format,
 				 I remember we talked about possibly showing only one question
 				 onscreen, etc; we can change this how we seet fit, it's just to
 				 give a rudimentary idea as to how the quiz *could* look like.	
 			
+			Recommendations:
+			-When we get around to calculating the quiz answers, it may be best to
+			 tally up the number of times one question is answered (create
+			 3 variables and code the quiz to tally them up each time there's
+			 an answer, for example answering question 1 with answer 1 would make
+			 "q1Total" +1, etc. Then after calculating them we'll compare them to each
+			 other)
 		-->
 		<meta charset="utf-8" >
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -59,6 +66,9 @@
 			<article>
 				<form>
 					<fieldset>
+						<!--
+							The following questions will determine the user's class.
+						-->
 						<label for="question1">Question 1: 
 							The world can be a dangerous place, how do you prepare yourself?
 						</label><br>
@@ -85,7 +95,7 @@
 						</label><br>
 						<input type="radio" name="q2answer" id="q2a2" value="2">
 						<label for="q2a2">B. I will examine how and why this happened to 
-							ensure my training doesn’t lapse again.
+							ensure my training doesn&#39;t lapse again.
 						</label><br>
 						<input type="radio" name="q2answer" id="q2a3" value="3">
 						<label for="q2a3">C. I seek the counsel of my caretakers; 
@@ -140,7 +150,63 @@
 						</label><br>
 						<input type="radio" name="q5answer" id="q5a3" value="3">
 						<label for="q5a3">C. Their morale is lifted by my presence.
-						</label>
+						</label><br><br>
+						<!--
+							These questions determine race of user's character
+						-->
+						<label for="question6">Question 6: Where would you
+							most like to live?
+						</label><br>
+						<input type="radio" name="q6answer" id="q6a1" value="1">
+						<label for="q6a1">A. In a city or town with others like me, 
+							living alongside others and contributing.</label><br>
+						<input type="radio" name="q6answer" id="q6a2" value="2">
+						<label for="q6a2">B. On a university campus where I 
+							balance my life with pursuits of mastery.</label><br>
+						<input type="radio" name="q6answer" id="q6a3" value="3">
+							<label for="q6a3">On a farm where I work to sustain 
+								my home&#39;s self-sufficiency.</label><br><br>
+
+						<label for="question7">Question 7: What do you seek 
+							when you travel?</label><br>
+							<input type="radio" name="q7answer" id="q7a1" value="1">
+							<label for="q7a1">A. To see the world.</label><br>
+							<input type="radio" name="q7answer" id="q7a2" value="2">
+							<label for="q7a2">B. To learn about new places.</label><br>
+							<input type="radio" name="q7answer" id="q7a3" value="3">
+							<label for="q7a3">C. To collect memories and mementos.</label><br><br>
+						
+						<label for="question8">Question 8: You must spend the next year 
+							on a project, which would be best for you?</label><br>
+							<input type="radio" name="q8answer" id="q8a1" value="1">
+							<label for="q8a1">A. Write a book about whatever you want.</label><br>
+							<input type="radio" name="q8answer" id="q8a2" value="2">
+							<label for="q8a2">B. Learn a new skill.</label><br>
+							<input type="radio" name="q8answer" id="q8a3" value="3">
+							<label for="q8a3">C.Improve myself physically and mentally 
+								to improve the rest of my life.</label><br><br>
+
+						<label for="question9">Question 9: What gives you the 
+							most fulfillment in life?</label><br>
+							<input type="radio" name="q9answer" id="q9a1" value="1">
+							<label for="q9a1">A. My career.</label><br>
+							<input type="radio" name="q9answer" id="q9a2" value="2">
+							<label for="q9a2">B. My hobbies.</label><br>
+							<input type="radio" name="q9answer" id="q9a3" value="3">
+							<label for="q9a3">C. My family.</label><br><br>
+
+							<label for="question10">Question 10: You need to rebuild 
+								your life after a difficult time and must stay positive, 
+								how do you view this?</label><br>
+								<input type="radio" name="q10answer" id="q10a1" value="1">
+								<label for="q10a1">A. I can rebuild my life with those 
+									who are still a part of it.</label><br>
+								<input type="radio" name="q10answer" id="q10a2" value="2">
+								<label for="q10a2">B. This is an opportunity to 
+									reinvent myself!</label><br>
+								<input type="radio" name="q10answer" id="q10a3" value="3">
+								<label for="q10a3">C. I have made it to the other side of 
+									this struggle, my life will improve as a result.</label><br>
 					</fieldset>
 				</form>
 				
