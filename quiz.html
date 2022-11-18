@@ -61,7 +61,7 @@
 					<!--
 						The following questions will determine the user's class.
 					-->
-					<label id="questionLabel" for="question">Start the quiz to find your ideal class and race combination:</label><br>
+					<h4 id="questionLabel">Start the quiz to find your ideal class and race combination:</h4>
 					<input type="radio" name="answer" id="answer1" value="1" hidden>
 					<label id="answer1Label" for="answer1"></label><br>
 					<input type="radio" name="answer" id="answer2" value="2" hidden>
@@ -80,7 +80,7 @@
 				Solely for educational purposes.
 			</p>
 		</footer>
-		<script src="quiz.js"></script
+		<script src="quiz.js"></script>
 	</body>
 </html>
 <!--
@@ -92,6 +92,9 @@
 	I remember we talked about possibly showing only one question
 	onscreen, etc; we can change this how we seet fit, it's just to
 	give a rudimentary idea as to how the quiz *could* look like.	
+	
+	(11/18) Removed a lot of the markup for the questions and added it into quiz.js to make
+	for a more dynamic quiz experience.
 	
 	Recommendations:
 	-When we get around to calculating the quiz answers, it may be best to

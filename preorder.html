@@ -47,9 +47,9 @@
 				the current date)
 			-->
 			<form id="preorderRequest" action="ordersuccess.html" novalidate="novalidate">
+				<h3>Enter your payment information below:</h3>
 				<fieldset>
 					<div id="errorText"></div>
-					<legend>Enter your payment information below:</legend>
 					<div id="addressInfo">
 						<label for="firstName">First Name&#42;</label><br>
 						<input type="text" name="firstName" id="firstName" required="required"><br>
@@ -125,23 +125,23 @@
 <!--
 	
 	Updates:
-	-Continued working on the preorder form
-	-Very close to done
-	-Added these fields:
-	City (L 86)
-	State (L 93; could use a JS array)
-	Apartment Number (L 99)
-	Card Security Code/CVV (L 121)
-	Expiration Date (L 127. May want to integrate JS interactivity later; see
-	"Recommendations" section below in comments, 1st subpoint)
-	-Included an asterisk(*) at the end of every available field so far 
-	which is considered required (it will have "&#42;" at the end of 
-	the label; this is the ASCII code for an asterisk. These fields 
-	also have their input/element to enter data in include the
-	"required" tag)
-	
-	Recommendations:
-	-JavaScript
-	-Array containing the initials of all 50 states (for when
-	choosing a state)
+-Continued working on the preorder form
+-Very close to done
+-Added these fields:
+City (L 86)
+State (L 93; could use a JS array)
+Apartment Number (L 99)
+Card Security Code/CVV (L 121)
+Expiration Date (L 127. May want to integrate JS interactivity later; see
+"Recommendations" section below in comments, 1st subpoint)
+-Included an asterisk(*) at the end of every available field so far 
+which is considered required (it will have "&#42;" at the end of 
+the label; this is the ASCII code for an asterisk. These fields 
+also have their input/element to enter data in include the
+"required" tag)
+
+Recommendations:
+-JavaScript
+-Array containing the initials of all 50 states (for when
+choosing a state)
 -->
