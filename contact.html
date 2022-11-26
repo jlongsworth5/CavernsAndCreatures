@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--
+			SDEV 265 Final Project
+			
+			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
+			Date:   	11/26/2022
+			
+			Filename: contact.html
+			
+			Updates:
+
+			
+		-->
+		<meta charset="utf-8" >
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>Caverns and Creatures</title>
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico" > @*Need a favicon*@
+		<link rel="stylesheet" href=".css" >
+		<script src="modernizr.custom.js"></script>
+	</head>
+
+	<!--
+		This page is to provide a way for users to contact the company who owns the upcoming Caverns & Creatures
+        game, whether it be for hiring opportunities, feedback, etc.
+	-->
+	<body>
+		<header>
+			<h1>Caverns and Creatures</h1>
+      <h5>Ivy Games</h5>
+		</header>		
+
+		<!--
+            Create the navigation bar *WIP*
+        -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="preorder.html">Pre&#8208;order</a></li>
+            </ul>
+        </nav>
+
+		<div class="main">
+			<article>
+                <h4>Interested in giving us personal feedback, or offering professional business inquiries? We'd love
+                    to hear from you (and we're hiring)! Fill out this form to talk with us.
+				</h4><br>
+				<!--
+					Create a form for the user to get in touch with the game creators.
+				-->
+				<form>
+                    <h3>Enter your contact information below.</h3>
+					<fieldset>
+						<label for="contactFName">First Name&#42;</label><br>
+							<input type="text" name="contactFName" id="contactFName" required="required"><br>
+
+						<label for="contactEmail">Email&#42;</label><br>
+							<input type="email" name="contactEmail" id="contactEmail" required="required"><br>
+
+                        <label for="contactPhone">Phone #</label><br>
+                            <input type="text" name="contactPhone" id="contactPhone"><br>
+
+						<label for="contactComment">Comment (optional; explain why you're contacting us)
+						</label><br>
+							<input type="text" name="contactComment" id="contactComment"><br>
+
+                        <input type="submit" value="Submit Info" id="submitButton">
+                        <br>
+					</fieldset>
+				</form>
+			</article>
+		</div>		
+
+	</body>
+	<footer>
+		<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
+			<br>
+			Solely for educational purposes.
+		</p>
+	</footer>
+</html>
