@@ -3,31 +3,31 @@
 	<head>
 		<!--
 			SDEV 265 Final Project
-			
+
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
 			Date:   	11/4/2022
-			
+
 			Filename: preorder.html
-			
+
 			Updates:
 			-Continued working on the preorder form
 				-Roughly halfway finished
 			-Added navigation bar (WIP; L 46)
 			-Added footer (WIP; L 102)
-			
+
 			Recommendations:
 			-JavaScript
 				-Interactive calendar feature when choosing the expiration data
 				of a credit/debit card
 				-Array containing the initials of all 50 states (for when
 				choosing a state)
-			
+
 		-->
 		<meta charset="utf-8" >
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Caverns and Creatures</title>
 		<link rel="icon" type="image/x-icon" href="images/favicon.ico" > @*Need a favicon*@
-		<link rel="stylesheet" href=".css" >
+		<link rel="stylesheet" href="css/style.css" >
 		<script src="modernizr.custom.js"></script>
 	</head>
 
@@ -38,38 +38,39 @@
 		<header>
 			<h1>Caverns and Creatures</h1>
       <h5>Ivy Games</h5>
-		</header>		
+		</header>
 
 		<!--
             Create the navigation bar *WIP*
         -->
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="preorder.html">Pre&#8208;order</a></li>
+                <li><a href="index.html"></a><img src="css/pictures/homeButton.jpg" width="450" height="150"></a></li>
+                <li><a href="quiz.html"><img src="css/pictures/characters.jpg" width="450" height="150"></a></li>
+                <li><a href="preorder.html"><img src="css/pictures/preorder.jpg" width="450" height="150"></a></li>
             </ul>
         </nav>
 
-		<div class="main">
+		<div class="preorder">
 			<article>
 				<!--
 					Create the form for customer to enter payment information in;
 					consider researching what a fieldset is and implementing it
-					
+
 					Suggestion for later: implement javascript(?) that lets the user
 					select from a gui calendar (and also perhaps to automatically get
 					the current date)
 				-->
 				<form>
+
 					<fieldset>
 						<legend>Enter your payment information below:</legend>
 						<label for="firstName">First Name</label><br>
 							<input type="text" name="firstName" id="firstName" required="required"><br>
-						
+
 						<label for="lastName">Last Name</label><br>
 							<input type="text" name="lastName" id="lastName" required="required"><br>
-						
+
 						<label for="address">Street Address</label><br>
 							<input type="text" name="streetAddress" id="address" required="required"><br>
 
@@ -96,7 +97,7 @@
 					</fieldset>
 				</form>
 			</article>
-		</div>		
+		</div>
 
 	</body>
 	<footer>
