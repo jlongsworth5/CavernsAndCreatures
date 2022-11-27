@@ -1,0 +1,42 @@
+.content{
+  max-width: 960px;
+  margin:auto;
+}
+
+body{
+  background-image: url("https://assets.wallpapersin4k.org/uploads/2017/04/Old-Parchment-Wallpaper-12.jpg");
+  background-size: cover;
+}
+
+h1{
+  font-size: 45px;
+  color: black;
+}
+
+h3{
+  color: #783330;
+}
+
+hr.sep-3 {
+  border: none;
+  height: 5px;
+  background-image: linear-gradient(to right, #FF5F00, #B20600, #FF5F00);
+}
+
+p1{
+  font-family: "Lucida Handwriting";
+  font-weight: 700;
+}
+
+.preorder{
+  background-image: url("https://getwallpapers.com/wallpaper/full/7/c/d/592661.jpg");
+  background-size: cover;
+  color: white;
+}
+
+
+
+ul li{
+  display: inline;
+  text-align: center;
+}
