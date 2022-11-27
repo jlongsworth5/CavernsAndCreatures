@@ -8,137 +8,140 @@
 			Date:   	11/14/2022
 			
 			Filename: preorder.html
-			
-			Updates:
-			-Continued working on the preorder form
-				-Very close to done
-				-Added these fields:
-					City (L 86)
-					State (L 93; could use a JS array)
-					Apartment Number (L 99)
-					Card Security Code/CVV (L 121)
-					Expiration Date (L 127. May want to integrate JS interactivity later; see
-					 "Recommendations" section below in comments, 1st subpoint)
-				-Included an asterisk(*) at the end of every available field so far 
-				 which is considered required (it will have "&#42;" at the end of 
-				 the label; this is the ASCII code for an asterisk. These fields 
-				 also have their input/element to enter data in include the
-				 "required" tag)
-			
-			Recommendations:
-			-JavaScript
-				-Array containing the initials of all 50 states (for when
-				choosing a state)
-			
 		-->
 		<meta charset="utf-8" >
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Caverns and Creatures</title>
-		<link rel="icon" type="image/x-icon" href="images/favicon.ico" > @*Need a favicon*@
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico" > <!--Need a favicon-->
 		<link rel="stylesheet" href=".css" >
 		<script src="modernizr.custom.js"></script>
 	</head>
-
+	
 	<!--
 		Customers can preorder the Caverns and Creatures game in this page.
 	-->
 	<body>
 		<header>
 			<h1>Caverns and Creatures</h1>
-      <h5>Ivy Games</h5>
+			<h5>Ivy Games</h5>
 		</header>		
-
+		
 		<!--
             Create the navigation bar *WIP*
-        -->
+		-->
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="quiz.html">Quiz</a></li>
                 <li><a href="preorder.html">Pre&#8208;order</a></li>
-            </ul>
-        </nav>
-
+			</ul>
+		</nav>
+		
 		<div class="main">
-			<article>
-				<!--
-					Create the form for customer to enter payment information in;
-					consider researching what a fieldset is and implementing it
-					
-					Suggestion for later: implement javascript(?) that lets the user
-					select from a gui calendar (and also perhaps to automatically get
-					the current date)
-				-->
-				<form>
-					<fieldset>
-						<legend>Enter your payment information below:</legend>
+			<!--
+				Create the form for customer to enter payment information in;
+				consider researching what a fieldset is and implementing it
+				
+				Suggestion for later: implement javascript(?) that lets the user
+				select from a gui calendar (and also perhaps to automatically get
+				the current date)
+			-->
+			<form id="preorderRequest" action="ordersuccess.html" novalidate="novalidate">
+				<h3>Enter your payment information below:</h3>
+				<fieldset>
+					<div id="errorText"></div>
+					<div id="addressInfo">
 						<label for="firstName">First Name&#42;</label><br>
-							<input type="text" name="firstName" id="firstName" required="required"><br>
+						<input type="text" name="firstName" id="firstName" required="required"><br>
 						
 						<label for="lastName">Last Name&#42;</label><br>
-							<input type="text" name="lastName" id="lastName" required="required"><br>
-						information
+						<input type="text" name="lastName" id="lastName" required="required"><br>
 						<label for="address">Street Address&#42;</label><br>
-							<input type="text" name="streetAddress" id="address" required="required"><br>
-
+						<input type="text" name="streetAddress" id="address" required="required"><br>
+						
 						<label for="city">City</label><br>
-							<input type="text" id="city" name="city" required="required"><br>
-
-						<!--
-							"state" label:
-							Spot for list of state abbreviations; make an array in JS maybe?
-						-->
+						<input type="text" id="city" name="city" required="required"><br>
+						
 						<label for="state">State&#42;</label><br>
-							<select id="state" name="state" required="required"></select>
-
+						<select id="state" name="state" required="required">
+							<option label="Select"></option>
+						</select>
+						<br>
 						<label for="zip">Zip code&#42;</label><br>
-							<input type="number" name="zipCode" id="zip" required="required"><br>
-
+						<input type="number" name="zipCode" id="zip" required="required"><br>
+						
 						<label for="aptNumber">Apartment Number</label><br>
-							<input type="number" id="aptNumber" name="aptNumber"><br>
-
-						<!--
-							Would like to implement 2 radio buttons for "Credit" & "Debit";
-							may have to group these into something for the "for" part of the
-							label
-						-->
-						<label>Card Type&#42;</label><br>
-							<label for="creditCard">Credit</label>
-								<input type="radio" name="cardType" id="creditCard" value="credit"><br>
-							<label for="debitCard">Debit</label>
-								<input type="radio" name="cardType" id="debitCard" value="debit"><br>
+						<input type="text" id="aptNumber" name="aptNumber"><br>
+					</div>
+					<!--
+						Would like to implement 2 radio buttons for "Credit" & "Debit";
+						may have to group these into something for the "for" part of the
+						label
+					-->
+					<div id="paymentInfo">
+						<label>Card Type&#42;</label>
+						<br>
+						<label for="creditCard">Credit</label>
+						<input type="radio" name="cardType" id="creditCard" value="credit"><br>
+						<label for="debitCard">Debit</label>
+						<input type="radio" name="cardType" id="debitCard" value="debit"><br>
 						<label for="cardNumber">Card Number&#42;<br>
 							<input type="number" name="cardNumber" id="cardNumber" required="required">
 						</label>
-
+						<br>
+						
 						<!--
 							Another step in card verification: the 3-digit Security Code on the back
 							If/when we add exeption handling/error checking, this should only allow for
 							3 numbers max to be entered
 						-->
 						<label for="cardVerNum">Card Security Code&#47;CVV&#42;</label><br>
-							<input type="number" id="cardVerNum" name="cardVerNum" required="required"><br>
-
+						<input type="number" id="cardVerNum" name="cardVerNum" required="required"><br>
+						
 						<!--
 							Card verification: expiration date
 						-->
 						<label>Card Expiration Date&#42;</label><br>
-							<label for="cardExpMonth">Month</label>
-								<input type="number" name="expDateMonth" id="cardExpMonth" required="required">
-							<label for="cardExpYear">Year</label>
-								<input type="number" name="expDateYear" id="cardExpYear" required="required">							
-
-						
-					</fieldset>
-				</form>
-			</article>
-		</div>		
-
+						<label for="cardExpMonth">Month</label>
+						<input type="number" name="expDateMonth" id="cardExpMonth" required="required">
+						<label for="cardExpYear">Year</label>
+						<input type="number" name="expDateYear" id="cardExpYear" required="required">							
+					</div>
+					<br>
+					<input type="submit" value="Place Order" id="submitButton" >
+				</fieldset>
+			</form>
+		</div>	
+		<footer>
+			<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
+				<br>
+				Solely for educational purposes.
+			</p>
+		</footer>	
+		<script src="preorder.js"></script>
 	</body>
-	<footer>
-		<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
-			<br>
-			Solely for educational purposes.
-		</p>
-	</footer>
 </html>
+
+<!--
+	
+	Updates:
+-Continued working on the preorder form
+-Very close to done
+-Added these fields:
+City (L 86)
+State (L 93; could use a JS array)
+Apartment Number (L 99)
+Card Security Code/CVV (L 121)
+Expiration Date (L 127. May want to integrate JS interactivity later; see
+"Recommendations" section below in comments, 1st subpoint)
+-Included an asterisk(*) at the end of every available field so far 
+which is considered required (it will have "&#42;" at the end of 
+the label; this is the ASCII code for an asterisk. These fields 
+also have their input/element to enter data in include the
+"required" tag)
+
+Recommendations:
+-JavaScript
+-Array containing the initials of all 50 states (for when
+choosing a state)
+-->
