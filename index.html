@@ -1,40 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head>		
 		<!--
 			SDEV 265 Final Project
 			
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
-			Date:   	11/14/2022
+			Date:   	11/26/2022
 			
-			Filename: index.html
-			
-			Updates:
-            (11/14)
-			-Added newsletter section. Must decide if submit button should be a
-             regular "button" input or "submit" input for submitting
-
-            Recommendations:
-            CSS
-            -Let's try wrapping the main page content so that it's no longer reaching
-             across the entire width of the page
-            -Navigation bar: decide whether to keep vertical or change to horizontal
-            -Give footer a little space from the end of the main page content & bottom
-             of page. Also consider centering its content (same for horizontal Nav bar)
-
-            JavaScript
-            -Scripting for newsletter section to verify a correct email address
-             is entered
-
-            HTML
-            -Create new page as confirmation of newsletter registration
-			
+			Filename: index.html		
 		-->
 		<meta charset="utf-8" >
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Caverns and Creatures</title>
-		<link rel="icon" type="image/x-icon" href="images/favicon.ico" > @*Need a favicon*@
-		<link rel="stylesheet" href=".css" >
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico" > <!--Need a favicon-->
+		<link rel="stylesheet" href="style.css" >
 		<script src="modernizr.custom.js"></script>
 	</head>
 	
@@ -43,43 +22,44 @@
 	-->
     <!--
         Where is the main element? We may want to make it a parent of the div or article elements
-    -->
+	-->
 	<body>
 		<header>
 			<h1>Caverns and Creatures</h1>
-      <h5>Ivy Games</h5>
+			<h5>Ivy Games</h5>
 		</header>		
 		<!--
             Create the navigation bar *WIP*
-        -->
+		-->
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="preorder.html">Pre&#8208;order</a></li>
-            </ul>
-        </nav>
-
+                <li><a href="index.html"></a><img src="css/pictures/homeButton.jpg" width="450" height="150"></li>
+                <li><a href="quiz.html"><img src="css/pictures/characters.jpg" width="450" height="150"></a></li>
+                <li><a href="preorder.html"><img src="css/pictures/preorder.jpg" width="450" height="150"></a></li>
+			</ul>
+		</nav>
+		
 		<div class="main">
             <!--
                 Create a short blurb explaining the website
-            -->
+			-->
 			<article>
+				<h4>Welcome</h4>
 				<p>Hello, and welcome to the homepage for the <i>Caverns and Creatures</i> website!
                     Here you can find some information regarding the upcoming game, try the
                     personality quiz to get an idea of what race and class is right for
                     your character, pre-order the game, and more.
-                </p>
+				</p>
 			</article>
             <!--
                 Display a description of the game so the user can learn more about it
-            -->
+			-->
             <article>
-                <p>Game Description:</p>
+                <h4>Game Description:</h4>
                 <p>In <i>Caverns and Creatures</i>, embark on an adventure under the wing of your 
                     Lore-Master or with one of our trained and experienced team members at 
                     in person or online live events with Ivy Games.  Immerse yourself in a 
-                    magical world that has been enraptured by an ancient curse.  </p>
+				magical world that has been enraptured by an ancient curse.  </p>
                 <p><i>Caverns and Creatures</i> takes players into the winding depths of the 
                     buried old world in search of solutions to a blight on the world of 
                     Sandalia.  Magic once fueled the blossom of a prosperous golden age 
@@ -92,37 +72,72 @@
                     Journey deep underground with your intrepid companions to uncover the 
                     mysteries of the old world in search of the lost history of the old ones.  
                     The mysteries of the corrupted ruins of the golden age may hold the key 
-                    to restoring the world to peace and prosperity. </p>
-            </article>
+				to restoring the world to peace and prosperity. </p>
+			</article>
             <!--
                 Create space for user to sign up for newsletter w/ email
-            -->
+			-->
             <article>
-                <p>Sign up for our newsletter to receive the latest updates on 
-                    <i>Caverns and Creatures</i>!
-                </p><br>
-                <form>
+				<h4>
+					Sign up for our newsletter to receive the latest updates on 
+					<i>Caverns and Creatures</i>!
+					<br>
+				</h4>
+                <form id="newsletterRequest" action="newsletterconfirm.html" novalidate="novalidate">
                     <fieldset>
+						<div id="errorEmail"></div>
                         <label for="newsEmail">Email:</label><br>
                         <input type="email" id="newsEmail" name="newsletterEmail">
                         <!--
                             Code either a button or submit input for submitting
                             the information below this comment
-                        -->
-                    </fieldset>
-                </form>
-            </article>
-
-		</div>
-        
-
-
-		
+						-->
+						<input type="submit" value="Sign Up" id="submitButton" >
+					</fieldset>
+				</form>
+			</article>
+			
+		</div>   
+		<footer>
+			<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
+				<br>
+				Solely for educational purposes.
+			</p>
+		</footer>
+		<script src="index.js"></script>
 	</body>
-    <footer>
-		<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
-			<br>
-			Solely for educational purposes.
-		</p>
-	</footer>
+    
 </html>
+
+<!--
+	Updates:
+    (11-26)
+    -Changed nav contents to suit css contents
+    -style.css & index.js now referenced
+    -Added welcome header to 1st article (L 47)
+    -Article headers now a h4 element instead of p (L 47, 58)
+
+	(11/14)
+	-Added newsletter section. Must decide if submit button should be a
+	regular "button" input or "submit" input for submitting
+	
+	(11/18)
+	-Added button to submit form for newsletter sign-up
+	-Added reference to script file: index.js
+	
+	Recommendations:
+	CSS
+	-Let's try wrapping the main page content so that it's no longer reaching
+	across the entire width of the page
+	-Navigation bar: decide whether to keep vertical or change to horizontal
+	-Give footer a little space from the end of the main page content & bottom
+	of page. Also consider centering its content (same for horizontal Nav bar)
+	
+	JavaScript
+	-Scripting for newsletter section to verify a correct email address
+	is entered
+	
+	HTML
+	-Create new page as confirmation of newsletter registration
+	
+-->
