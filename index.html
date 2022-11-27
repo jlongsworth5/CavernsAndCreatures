@@ -5,14 +5,29 @@
 			SDEV 265 Final Project
 			
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
-			Date:   	11/4/2022
+			Date:   	11/14/2022
 			
 			Filename: index.html
 			
 			Updates:
-            (11/3)
-			-Added navigation bar (WIP; L 18)
-			-Added footer (WIP; L 85)
+            (11/14)
+			-Added newsletter section. Must decide if submit button should be a
+             regular "button" input or "submit" input for submitting
+
+            Recommendations:
+            CSS
+            -Let's try wrapping the main page content so that it's no longer reaching
+             across the entire width of the page
+            -Navigation bar: decide whether to keep vertical or change to horizontal
+            -Give footer a little space from the end of the main page content & bottom
+             of page. Also consider centering its content (same for horizontal Nav bar)
+
+            JavaScript
+            -Scripting for newsletter section to verify a correct email address
+             is entered
+
+            HTML
+            -Create new page as confirmation of newsletter registration
 			
 		-->
 		<meta charset="utf-8" >
@@ -79,7 +94,29 @@
                     The mysteries of the corrupted ruins of the golden age may hold the key 
                     to restoring the world to peace and prosperity. </p>
             </article>
-		</div>		
+            <!--
+                Create space for user to sign up for newsletter w/ email
+            -->
+            <article>
+                <p>Sign up for our newsletter to receive the latest updates on 
+                    <i>Caverns and Creatures</i>!
+                </p><br>
+                <form>
+                    <fieldset>
+                        <label for="newsEmail">Email:</label><br>
+                        <input type="email" id="newsEmail" name="newsletterEmail">
+                        <!--
+                            Code either a button or submit input for submitting
+                            the information below this comment
+                        -->
+                    </fieldset>
+                </form>
+            </article>
+
+		</div>
+        
+
+
 		
 	</body>
     <footer>
