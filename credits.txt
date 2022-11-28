@@ -17,4 +17,7 @@ preOrderButton (unused): ???
 
 landscape-16-1 (unused): ???
 
-All rights belong to respective owners of this media. No copyright infringement intended. Used for educational purposes only.
+Third-party libraries:
+modernizr.custom.js
+
+All rights belong to respective owners of the third-party media used within this project. No copyright infringement intended. Used for educational purposes only.
