@@ -13,11 +13,5 @@ buriedRiun: https://wallpapercave.com/wp/xugGCHw.jpg
 
 homeButton source: https://ae01.alicdn.com/kf/HTB10yEFNVXXXXXgaFXXq6xXFXXXo/digital-art-fantasy-art-nature-landscape-water-rock-hill-mountain-island-trees-4-Sizes-Home-Decoration.jpg_640x640.jpg
 
-preOrderButton (unused): ???
-
-landscape-16-1 (unused): ???
-
-Third-party libraries:
-modernizr.custom.js
 
 All rights belong to respective owners of the third-party media used within this project. No copyright infringement intended. Used for educational purposes only.
