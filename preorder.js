@@ -2,11 +2,11 @@
 	DEV 265 Final Project
 	
 	Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
-	Date:   	11/26/2022
+	Date:   	12/1/2022
 
 	Updates:
 	Added some comments to the code.
-	
+
 	Filename: preorder.js
 */
 
