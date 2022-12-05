@@ -36,8 +36,6 @@ function setupPage()
 
 function validateAddress()
 {
-	//T: Consider something like "inputElements" for quiz.js if not already implemented
-	// (may need to rewrite html to make possible)
 	var inputElements = document.querySelectorAll("#addressInfo input");
 	var errorDiv = document.getElementById("errorText");
 	var elementCount = inputElements.length;
