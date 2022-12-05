@@ -2,8 +2,7 @@
 	DEV 265 Final Project
 	
 	Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
-	Date:   	11/18/2022
-	
+	Date:   	12/1/2022
 	Filename: preorder.js
 */
 
@@ -37,6 +36,8 @@ function setupPage()
 
 function validateAddress()
 {
+	//T: Consider something like "inputElements" for quiz.js if not already implemented
+	// (may need to rewrite html to make possible)
 	var inputElements = document.querySelectorAll("#addressInfo input");
 	var errorDiv = document.getElementById("errorText");
 	var elementCount = inputElements.length;
@@ -80,6 +81,8 @@ function validateAddress()
 function validatePayment()
 {
 	var inputElements = document.querySelectorAll("#paymentInfo input");
+	//T: We may want to change this line below; the variable name, as well as the element it's
+	// trying to get. Identical to another variable in another function
 	var errorDiv = document.getElementById("errorText");
 	var elementCount = inputElements.length;
 	var requiredValidity = true;
@@ -127,9 +130,17 @@ function validateCardNumber()
 {	
 	var cardNumber = document.getElementById("cardNumber").value;
 	var cardProvider = document.getElementById("cardProvider");
+	//T: First number in credit card # must match the one specified
+	// in the visa, mc, discover, & amex variables below
+	// ("/^#"; e.x. visa starts with 4).
+	//T: What do the other specifications for these cards mean?
 	var visa = /^4[0-9]{12}(?:[0-9]{3})?$/;
+	//T: MasterCard must start with a 6, then the next number is between 1-5
 	var mc = /^5[1-5][0-9]{14}$/;
+	//T: Discover must start with "6011"
 	var discover = /^6(?:011|5[0-9]{2})[0-9]{12}$/;
+	//T: American Express must start with "347" and only has 15 digits
+
 	var amex = /^3[47][0-9]{13}$/;
 	var requiredValidity = false;
 	
