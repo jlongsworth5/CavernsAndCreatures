@@ -5,16 +5,19 @@
 			SDEV 265 Final Project
 			
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
-			Date:   	11/14/2022
+
+			Date:   	12/1/2022
+
 			
 			Filename: preorder.html
 		-->
 		<meta charset="utf-8" >
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Caverns and Creatures</title>
-		<link rel="icon" type="image/x-icon" href="images/favicon.ico" > <!--Need a favicon-->
-		<link rel="stylesheet" href=".css" >
-		<script src="modernizr.custom.js"></script>
+
+		<link rel="icon" type="image/x-icon" href="favicon.ico" >
+		<link rel="stylesheet" href="css/style.css" >
+
 	</head>
 	
 	<!--
@@ -29,6 +32,7 @@
 		<!--
             Create the navigation bar *WIP*
 		-->
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -36,8 +40,9 @@
                 <li><a href="preorder.html">Pre&#8208;order</a></li>
 			</ul>
 		</nav>
-		
+
 		<div class="main">
+
 			<!--
 				Create the form for customer to enter payment information in;
 				consider researching what a fieldset is and implementing it
@@ -90,13 +95,16 @@
 						</label>
 						<br>
 						
+
 						<!--
 							Another step in card verification: the 3-digit Security Code on the back
 							If/when we add exeption handling/error checking, this should only allow for
 							3 numbers max to be entered
 						-->
 						<label for="cardVerNum">Card Security Code&#47;CVV&#42;</label><br>
+
 						<input type="number" id="cardVerNum" name="cardVerNum" required="required"><br>
+
 						
 						<!--
 							Card verification: expiration date
@@ -105,14 +113,17 @@
 						<label for="cardExpMonth">Month</label>
 						<input type="number" name="expDateMonth" id="cardExpMonth" required="required">
 						<label for="cardExpYear">Year</label>
+
 						<input type="number" name="expDateYear" id="cardExpYear" required="required">							
 					</div>
 					<br>
 					<input type="submit" value="Place Order" id="submitButton" >
+
 				</fieldset>
 			</form>
 		</div>	
 		<footer>
+
 			<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
 				<br>
 				Solely for educational purposes.
@@ -120,6 +131,7 @@
 		</footer>	
 		<script src="preorder.js"></script>
 	</body>
+
 </html>
 
 <!--
@@ -145,3 +157,4 @@ Recommendations:
 -Array containing the initials of all 50 states (for when
 choosing a state)
 -->
+
