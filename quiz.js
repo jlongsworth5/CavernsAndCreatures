@@ -2,7 +2,7 @@
 	DEV 265 Final Project
 	
 	Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
-
+	
 	Date:   	12/1/2022
 	
 	Filename: quiz.js
@@ -51,8 +51,18 @@ const answers = new Array("	A. I must be strong, physically and mentally. Prepar
 	"B. This is an opportunity to reinvent myself!",
 "C. I have made it to the other side of this struggle, my life will improve as a result.");
 
+const classText = new Array('Warrior: The Warrior is a skilled combatant whose toughness and grit will see them through any challenge. "I will hold fast and overcome!"',
+	'Cleric: The Cleric uses deep knowledge of the world, both magic and mundane, to find solutions to overcome challenge. "Power comes not from the tip of the spear, but from the wise application of its user."',
+'Chaplain: Chaplains are the spiritual leaders of the people; warrior monks who inspire others and wield great powers of influence. "Legends will be made of our faith, our strength, our mission!"');
+
+const raceText = new Array('Human: Humans are a diverse group who occupy all levels of society, possessing significant martial, political, and economic power world-wide and able to use magic using totems imbued with their spirit. Humans have a rich and varied history that spans the globe and influences all things in their world with vast empires that each have unique cultures, militaries, and lives. Able to appeal to many across the world, humans are solid all-rounders who can excel in any role. ',
+	'Sindari: respected everywhere, Sindari society stems from a cultured past built on their innate ability to control magic. They view the world through a philosophy of "Three Pillars": the way of the warrior, the wisdom of the teacher, and the spirit of the divine. They can live for hundreds of years and spend their lives in long phases where they strive to reach proficiency in each pillar. They are revered for their skills and can often be found in high places of society or are sought out for their prowess in specific areas; where there is challenge, there is a Sindari seeking to master it. ',
+'Baluk: Organized into small tribes scattered across the untamed lands between population centers, the Baluk are rugged and renowned for their knowledge of survival and warfare which is magically transposed intergenerationally each time a Baluk overcomes challenges. They organize their lives around trials of "the Calmur" where adolescents embark on a pilgrimage to unlock their generational memories before returning to their clans. Baluk are strong and skilled; aspirants of pilgrimage often accompany adventurers and can draw on generational wisdom from those in their clans even when far apart. ');
+
 /* Global variables */
 var questionIndex = 0;
+var classTotals = new Array(0, 0, 0);
+var raceTotals = new Array(0, 0, 0);
 
 function setupPage()
 {
@@ -121,9 +131,18 @@ function submitAnswer(evt)
 	
 	var answerValues = answers.slice(questionIndex * 3, (questionIndex * 3) + 3);
 	var label = document.getElementById("questionLabel");
+	var choices = document.querySelectorAll("input[type=radio]");
 	var answer1 = document.getElementById("answer1Label");
 	var answer2 = document.getElementById("answer2Label");
 	var answer3 = document.getElementById("answer3Label");
+	
+	// Do nothing if no choice is selected
+	if (!choices[0].checked && !choices[1].checked && !choices[2].checked)
+	{
+		return;
+	}
+	
+	logScore(choices);
 	
 	label.innerHTML = questions[questionIndex];
 	answer1Label.innerHTML = answerValues[0];
@@ -131,10 +150,64 @@ function submitAnswer(evt)
 	answer3Label.innerHTML = answerValues[2];
 }
 
-function getResults()
+// Adjusts the race and class scores based on selected option
+function logScore(choices)
 {
-	document.getElementsByTagName("form")[0].submit();
+	if (choices[0].checked)
+	{
+		choices[0].checked = false;
+		if (questionIndex < 6)
+		{
+			classTotals[0]++;
+		}
+		else
+		{
+			raceTotals[0]++;
+		}
+	}
+	else if (choices[1].checked)
+	{
+		choices[1].checked = false;
+		if (questionIndex < 6)
+		{
+			classTotals[1]++;
+		}
+		else
+		{
+			raceTotals[1]++;
+		}
+	}
+	else
+	{
+		choices[2].checked = false;
+		if (questionIndex < 6)
+		{
+			classTotals[2]++;
+		}
+		else
+		{
+			raceTotals[2]++;
+		}
+	}
+}
+
+// Determine quiz results
+function getQuizResults()
+{
+	var classIndex = classTotals.reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0);
+	var raceIndex = raceTotals.reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0)
 	
+	document.getElementById("quizCharResult").innerHTML = classText[classIndex];
+	document.getElementById("quizRaceResult").innerHTML = raceText[raceIndex];
+}
+
+// Hides the quiz and displays the user's results.
+function getResults()
+{	
+	getQuizResults();
+	document.getElementById("questions").hidden = true;
+	document.getElementById("quizCharResult").hidden = false;
+	document.getElementById("quizRaceResult").hidden = false;
 }
 
 /* create event listeners */
@@ -159,4 +232,4 @@ if (window.addEventListener)
 else if (window.attachEvent)
 {
 	window.attachEvent("onload", createEventListeners);
-}	
+}		
