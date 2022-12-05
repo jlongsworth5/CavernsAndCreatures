@@ -3,10 +3,6 @@
 	
 	Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
 	Date:   	12/1/2022
-
-	Updates:
-	Added some comments to the code.
-
 	Filename: preorder.js
 */
 
@@ -22,7 +18,6 @@ var statesArray = new Array("AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL"
 /* setup the page on loading */
 function setupPage()
 {	
-	//T: What's the purpose of this part?
 	var selectElement = document.getElementById("state");
 	selectElement.remove(0);
 	for (var state = 0; state < statesArray.length; state++)
@@ -145,6 +140,7 @@ function validateCardNumber()
 	//T: Discover must start with "6011"
 	var discover = /^6(?:011|5[0-9]{2})[0-9]{12}$/;
 	//T: American Express must start with "347" and only has 15 digits
+
 	var amex = /^3[47][0-9]{13}$/;
 	var requiredValidity = false;
 	
