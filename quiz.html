@@ -3,8 +3,9 @@
 	<head>
 		<!--
 			SDEV 265 Final Project
-			
+
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
+
 			Date:   	12/1/2022
 			
 			Filename: quiz.html
@@ -12,7 +13,8 @@
 		<meta charset="utf-8" >
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Caverns and Creatures</title>
-		<link rel="icon" type="image/x-icon" href="images/favicon.ico" > <!--Need a favicon-->
+
+		<link rel="icon" type="image/x-icon" href="favicon.ico" >
 		<link rel="stylesheet" href="css/style.css" >
 
 	</head>
@@ -24,32 +26,26 @@
 		<header>
 			<h1>Caverns and Creatures</h1>
 			<h5>Ivy Games</h5>
+			<nav>
+	      <ul>
+					<li> <a href="index.html">Home</a> </li>
+	        <li> <a href="quiz.html">Quiz</a> </li>
+	        <li> <a href="preorder.html">Order</a> </li>
+				</ul>
+			</nav>
+
 		</header>
 		<!--
             Create the navigation bar *WIP*
 		-->
-        <nav>
-            <ul>
-				<!--
-                <li><a href="index.html">Home</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="preorder.html">Pre&#8208;order</a></li>
-
-				-->
-				<li><a href="index.html"><img src="css/pictures/homeButton.jpg" width="450" height="150"></a></li>
-                <li><a href="quiz.html"><img src="css/pictures/characters.jpg" width="450" height="150"></a></li>
-                <li><a href="preorder.html"><img src="css/pictures/preorder.jpg" width="450" height="150"></a></li>
-
-			</ul>
-		</nav>		
-		
 		<!--
 			Current format of the question form:
 			Labels describing the QUESTION will be for "question#"; # = current question
 			Radio buttons will be labeled "q#answer" to distinguish them as the answer
 			for their given question.
 			Labels for the ANSWER RADIO BUTTONS will be for "q#a$"; $ = answer number
-			
+
+
 			Additionally, consider where we should include character profiles. Including them
 			at the start is fine, although it may skew the user's answers if they know what
 			class to expect being assigned as before receiving their results
@@ -63,7 +59,8 @@
 				initiates the check is a better decision?) Either way, DO NOT
 				use "GET" when appending a method to the action attribute.
 			-->
-			<form id="quizResults" action="quizresults.html" novalidate="novalidate">
+
+			<form id="questions" novalidate="novalidate">
 				<fieldset>
 					<!--
 						The following questions will determine the user's class.
@@ -75,21 +72,21 @@
 					<label id="answer2Label" for="answer1"></label><br>
 					<input type="radio" name="answer" id="answer3" value="3" hidden>
 					<label id="answer3Label" for="answer1"></label><br>
+
 					<input type="submit" value="Start Quiz" id="submitButton" >					
 				</fieldset>
 			</form>
+			
+			<div id="quizResults" hidden=true>
+				<!--<img id="classImage"</img>-->
+				<b id="quizCharResult" ></b><br><br>
 
-			<!--
-				Create blank divs that can be used to display the quiz
-				results, after the user finishes answering all questions
-			-->
-			<div id="quizCharResult"></div><br><br>
-
-			<div id="quizRaceResult"></div><br>
-
+				<!--<img id="raceImage"></img>-->
+				<b id="quizRaceResult" ></b><br>
+			</div>
 			
 		</div>		
-		
+
 		<footer>
 			<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
 				<br>
@@ -107,19 +104,23 @@
 	-Like last update, please note that this is not the definitive quiz format,
 	I remember we talked about possibly showing only one question
 	onscreen, etc; we can change this how we seet fit, it's just to
-	give a rudimentary idea as to how the quiz *could* look like.	
-	
+
+	give a rudimentary idea as to how the quiz *could* look like.
+
 	(11/18) Removed a lot of the markup for the questions and added it into quiz.js to make
 	for a more dynamic quiz experience.
 
-
 	(?) JavaScript referenced. Quiz format edited.
 
-	(11/27) 
+	(11/27)
 	CSS referenced. Nav contents changed to make use of new pictures.
 	Divs added to end of quiz to insert & display chosen results at end
 	of quiz.
+
+	(11/28)
+	-Added a favicon
 	
+
 	Recommendations:
 	-When we get around to calculating the quiz answers, it may be best to
 	tally up the number of times one question is answered (create
@@ -127,4 +128,3 @@
 	an answer, for example answering question 1 with answer 1 would make
 	"q1Total" +1, etc. Then after calculating them we'll compare them to each
 	other)
--->
