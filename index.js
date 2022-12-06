@@ -5,7 +5,6 @@
 	Date:   	11/18/2022
 	
 	Filename: index.html
-
 	Updates: 12/01/22 
 	- Added ability to send JSON to an API if the URI is provided.
 */
@@ -24,14 +23,12 @@ function validateEmail()
 	var requiredValidity = true;
 	
 	try
-
 	{
 		if (emailCheck.test(emailInput.value) === false)
 		{
 			throw "Please provide a valid email address";
 		}	
 		
-
 		var validDomains = new Array("com", "edu", "org", "co.uk", "fr", "net", "de", "au");
 		var validDomain = false;
 		for (var i = 0; i < validDomains.length; i++)
@@ -47,7 +44,6 @@ function validateEmail()
 			throw "Please enter a valid e-mail domain";
 		}
 		
-
 		// remove any email error styling and message
 		emailInput.style.background = "";
 		errorDiv.innerHTML = "";
@@ -80,7 +76,6 @@ function validateForm(evt)
 	validateEmail();
 	if (formValidity === true)
 	{
-
 		var sent = false;
 		try
 		{		

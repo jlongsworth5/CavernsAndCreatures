@@ -2,6 +2,7 @@
 	DEV 265 Final Project
 	
 	Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
+	
 	Date:   	12/1/2022
 	
 	Filename: quiz.js
@@ -125,7 +126,6 @@ function submitAnswer(evt)
 		evt.returnValue = false; // prevent form from submitting in IE8
 	}
 	
-
 	var answerValues = answers.slice(questionIndex * 3, (questionIndex * 3) + 3);
 	var label = document.getElementById("questionLabel");
 	var choices = document.querySelectorAll("input[type=radio]");
@@ -149,7 +149,7 @@ function submitAnswer(evt)
 	}
 	
 	logScore(choices);
-
+	
 	label.innerHTML = questions[questionIndex];
 	answer1Label.innerHTML = answerValues[0];
 	answer2Label.innerHTML = answerValues[1];
@@ -237,3 +237,4 @@ if (window.addEventListener)
 else if (window.attachEvent)
 {
 	window.attachEvent("onload", createEventListeners);
+}		
