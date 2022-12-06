@@ -4,6 +4,9 @@
 	Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
 	Date:   	12/1/2022
 	Filename: preorder.js
+	Updates:
+	12/01/22 
+	- Added ability to send JSON to an API if the URI is provided.
 */
 
 "use strict"; // interpret document contents in Javascript strict mode
@@ -34,6 +37,7 @@ function setupPage()
 	document.getElementById("cardExpYear").value = currentDate.getFullYear();	
 }
 
+// Checks that the address is filled in and of an acceptable format
 function validateAddress()
 {
 	var inputElements = document.querySelectorAll("#addressInfo input");
@@ -76,11 +80,10 @@ function validateAddress()
 	}
 }
 
+// Confirms that a valid credit card number and cvv code are entered
 function validatePayment()
 {
 	var inputElements = document.querySelectorAll("#paymentInfo input");
-	//T: We may want to change this line below; the variable name, as well as the element it's
-	// trying to get. Identical to another variable in another function
 	var errorDiv = document.getElementById("errorText");
 	var elementCount = inputElements.length;
 	var requiredValidity = true;
@@ -124,6 +127,7 @@ function validatePayment()
 	}
 }
 
+// Checks the entered card number against regex values for the four major card types allowable numbers
 function validateCardNumber()
 {	
 	var cardNumber = document.getElementById("cardNumber").value;
@@ -138,7 +142,7 @@ function validateCardNumber()
 	//T: Discover must start with "6011"
 	var discover = /^6(?:011|5[0-9]{2})[0-9]{12}$/;
 	//T: American Express must start with "347" and only has 15 digits
-
+	
 	var amex = /^3[47][0-9]{13}$/;
 	var requiredValidity = false;
 	
@@ -179,10 +183,58 @@ function validateForm(evt)
 	formValidity = true;	
 	validateAddress();
 	validatePayment();
+	
+	//WHERE TO PUT THIS SO THAT IT ONLY CONTINUES IF NO ERRORS?
+	sendJsonToApi();
+	
 	if (formValidity === true)
 	{
-		document.getElementsByTagName("form")[0].submit();
+		window.alert("Order was submitted successfully! Thank you for your purchase. If you included an email address, you should receive an order confirmation email.");
+		document.getElementById("preorderRequest").reset();
 	}
+}
+
+// Add logic to send the json back to Ivy Games
+function sendJsonToApi()
+{
+	const uri = ""; // Enter your API's uri here
+	
+	var shippingInfo = getShippingInfo();
+	var paymentInfo = getPaymentInfo();
+	var jsonBody = { ShippingInfo: shippingInfo, PaymentInfo: paymentInfo };
+	
+	let postObject = { title: "PreOrder", body: jsonBody }
+	let post = JSON.stringify(postObject);
+	
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("POST", uri, true);
+	xmlhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	xmlhttp.send(post);
+	xmlhttp.onload = function () { if (xmlhttp.status === 201) { console.log("Post successful") } };
+}
+
+// Returns a JSON with the shipping info
+function getShippingInfo()
+{
+	var name = document.getElementById("firstName").value + " " + document.getElementById("lastName").value;
+	var address = document.getElementById("address").value;
+	var city = document.getElementById("city").value;
+	var state = document.getElementById("state").value;
+	var zip = document.getElementById("zip").value;
+	var aptNumber = document.getElementById("aptNumber").value;
+	
+	let shippingInfo = { Name: name, Address: address, City: city, State: state, ZipCode: zip, Apt: aptNumber };
+	return shippingInfo;
+}
+
+// Returns a JSON with the payment info
+function getPaymentInfo()
+{	
+	var cardNumber = document.getElementById("cardNumber").value;
+	var cvv = document.getElementById("cardVerNum").value;
+	var expiration = document.getElementById("cardExpMonth").value + " " + document.getElementById("cardExpYear").value;
+	let paymentInfo = { CardNumber: cardNumber, CVV: cvv, Expiration: expiration };
+	return paymentInfo;
 }
 
 /* create event listeners */

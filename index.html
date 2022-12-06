@@ -78,13 +78,13 @@
                 Create space for user to sign up for newsletter w/ email
 			-->
             <article>
-				<h4>
+				<h4 id="emailLabel">
 					Sign up for our newsletter to receive the latest updates on 
 					<i>Caverns and Creatures</i>!
 					<br>
 				</h4>
                 <form id="newsletterRequest" action="newsletterconfirm.html" novalidate="novalidate">
-                    <fieldset>
+                    <fieldset id="emailEntry">
 						<div id="errorEmail"></div>
                         <label for="newsEmail">Email:</label><br>
                         <input type="email" id="newsEmail" name="newsletterEmail">
@@ -94,6 +94,7 @@
 						-->
 						<input type="submit" value="Sign Up" id="submitButton" >
 					</fieldset>
+					<div id="emailSuccess" hidden=true><b>Newsletter registration successful! Thank you for signing up.</b></div>
 				</form>
 			</article>
 			
@@ -124,6 +125,9 @@
 	(11/18)
 	-Added button to submit form for newsletter sign-up
 	-Added reference to script file: index.js
+	
+	(11/28)
+	-Added a favicon
 	
 	Recommendations:
 	CSS

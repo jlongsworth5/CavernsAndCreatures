@@ -6,6 +6,9 @@
 	Date:   	12/1/2022
 	
 	Filename: quiz.js
+	
+	Updates:
+		12/1/22 - Added functions to hide the quiz and show the user's results based on his score
 */
 
 "use strict"; // interpret document contents in Javascript strict mode
@@ -123,12 +126,6 @@ function submitAnswer(evt)
 		evt.returnValue = false; // prevent form from submitting in IE8
 	}
 	
-	questionIndex++;
-	if (questionIndex > questions.length - 1)
-	{
-		getResults();
-	}
-	
 	var answerValues = answers.slice(questionIndex * 3, (questionIndex * 3) + 3);
 	var label = document.getElementById("questionLabel");
 	var choices = document.querySelectorAll("input[type=radio]");
@@ -140,6 +137,15 @@ function submitAnswer(evt)
 	if (!choices[0].checked && !choices[1].checked && !choices[2].checked)
 	{
 		return;
+	}
+	else
+	{			
+		questionIndex++;
+	}
+	
+	if (questionIndex > questions.length - 1)
+	{
+		getResults();
 	}
 	
 	logScore(choices);
@@ -206,8 +212,7 @@ function getResults()
 {	
 	getQuizResults();
 	document.getElementById("questions").hidden = true;
-	document.getElementById("quizCharResult").hidden = false;
-	document.getElementById("quizRaceResult").hidden = false;
+	document.getElementById("quizResults").hidden = false;
 }
 
 /* create event listeners */

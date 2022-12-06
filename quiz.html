@@ -78,14 +78,14 @@
 					<input type="submit" value="Start Quiz" id="submitButton" >					
 				</fieldset>
 			</form>
-			<!--
-				Create blank divs that can be used to display the quiz
-				results, after the user finishes answering all questions
-			-->
-			<div id="quizCharResult" hidden=true></div><br><br>
+			
+			<div id="quizResults" hidden=true>
+				<!--<img id="classImage"</img>-->
+				<b id="quizCharResult" ></b><br><br>
 
-			<div id="quizRaceResult" hidden=true></div><br>
-
+				<!--<img id="raceImage"></img>-->
+				<b id="quizRaceResult" ></b><br>
+			</div>
 			
 		</div>		
 		
@@ -118,6 +118,9 @@
 	CSS referenced. Nav contents changed to make use of new pictures.
 	Divs added to end of quiz to insert & display chosen results at end
 	of quiz.
+	
+	(11/28)
+	-Added a favicon
 	
 	Recommendations:
 	-When we get around to calculating the quiz answers, it may be best to
