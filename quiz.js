@@ -145,7 +145,7 @@ function submitAnswer(evt)
 	
 	if (questionIndex > questions.length - 1)
 	{
-		getResults();
+		showResults();
 	}
 	
 	logScore(choices);
@@ -208,7 +208,7 @@ function getQuizResults()
 }
 
 // Hides the quiz and displays the user's results.
-function getResults()
+function showResults()
 {	
 	getQuizResults();
 	document.getElementById("questions").hidden = true;
