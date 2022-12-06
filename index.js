@@ -5,6 +5,9 @@
 	Date:   	11/18/2022
 	
 	Filename: index.html
+
+	Updates: 12/01/22 
+	- Added ability to send JSON to an API if the URI is provided.
 */
 
 "use strict"; // interpret document contents in Javascript strict mode
@@ -21,12 +24,30 @@ function validateEmail()
 	var requiredValidity = true;
 	
 	try
-		{
+
+	{
 		if (emailCheck.test(emailInput.value) === false)
 		{
 			throw "Please provide a valid email address";
 		}	
 		
+
+		var validDomains = new Array("com", "edu", "org", "co.uk", "fr", "net", "de", "au");
+		var validDomain = false;
+		for (var i = 0; i < validDomains.length; i++)
+		{
+			if (emailInput.value.includes(validDomains[i]))
+			{
+				validDomain = true;
+				break;
+			}
+		}
+		if (!validDomain)
+		{
+			throw "Please enter a valid e-mail domain";
+		}
+		
+
 		// remove any email error styling and message
 		emailInput.style.background = "";
 		errorDiv.innerHTML = "";
@@ -59,8 +80,40 @@ function validateForm(evt)
 	validateEmail();
 	if (formValidity === true)
 	{
-		document.getElementsByTagName("form")[0].submit();
+
+		var sent = false;
+		try
+		{		
+			sendJsonToApi();
+			sent = true;
+		}
+		catch(error)
+		{
+			throw "Unable to sign up.";
+		}
+		if (sent === true)
+		{
+			document.getElementById("emailLabel").hidden = true;
+			document.getElementById("emailEntry").hidden = true;
+			document.getElementById("emailSuccess").hidden = false;
+		}
 	}
+}
+
+/* Send the e-mail to your api */
+function sendJsonToApi()
+{
+	const uri = ""; // Enter your URI here
+	
+	var email = document.getElementById("newsEmail").value;
+	let postObject = { title: "NewsLetter", body: email };
+	let post = JSON.stringify(postObject);
+	
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.open("POST", uri, true);
+	xmlhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	xmlhttp.send(post);
+	xmlhttp.onload = function () { if (xmlhttp.status === 201) { console.log("Post successful") } };
 }
 
 /* create event listeners */

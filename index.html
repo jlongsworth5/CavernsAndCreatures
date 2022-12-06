@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	<head>		
 		<!--
 			SDEV 265 Final Project
 
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
+
 			Date:   	11/26/2022
 
 			Filename: index.html
@@ -12,16 +13,9 @@
 		<meta charset="utf-8" >
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Caverns and Creatures</title>
-		<link rel="icon" type="image/x-icon" href="images/favicon.ico" > <!--Need a favicon-->
-		<link rel="stylesheet" href="css/style.css" >
-		<script src="modernizr.custom.js"></script>
 
-		<style>
-			ul li {
-				display: inline;
-				text-align: center;
-				}
-		</style>
+		<link rel="icon" type="image/x-icon" href="favicon.ico" >
+		<link rel="stylesheet" href="css/style.css" >	
 	</head>
 
 	<!--
@@ -44,7 +38,6 @@
 			<li><a href="quiz.html"><img src="css/pictures/characters.jpg" width="450" height="150"></a></li>
 			<li><a href="preorder.html"><img src="css/pictures/preorder.jpg" width="450" height="150"></a></li>
 		</ul>
-
 		<div class="main">
             <!--
                 Create a short blurb explaining the website
@@ -62,35 +55,40 @@
 			-->
             <article>
                 <h4>Game Description:</h4>
-                <p>In <i>Caverns and Creatures</i>, embark on an adventure under the wing of your
-                    Lore-Master or with one of our trained and experienced team members at
-                    in person or online live events with Ivy Games.  Immerse yourself in a
+
+                <p>In <i>Caverns and Creatures</i>, embark on an adventure under the wing of your 
+                    Lore-Master or with one of our trained and experienced team members at 
+                    in person or online live events with Ivy Games.  Immerse yourself in a 
 				magical world that has been enraptured by an ancient curse.  </p>
-                <p><i>Caverns and Creatures</i> takes players into the winding depths of the
-                    buried old world in search of solutions to a blight on the world of
-                    Sandalia.  Magic once fueled the blossom of a prosperous golden age
-                    for the diverse races of the world, but that magic has begun to tear
-                    at the world, creating tears in reality allowing denizens of strange
-                    and often hostile realms to warp the world around them.  Those with
-                    access to protective magic retreated into safe isolation leaving most
+                <p><i>Caverns and Creatures</i> takes players into the winding depths of the 
+                    buried old world in search of solutions to a blight on the world of 
+                    Sandalia.  Magic once fueled the blossom of a prosperous golden age 
+                    for the diverse races of the world, but that magic has begun to tear 
+                    at the world, creating tears in reality allowing denizens of strange 
+                    and often hostile realms to warp the world around them.  Those with 
+                    access to protective magic retreated into safe isolation leaving most 
                     to fend for themselves without the means to combat the changing world.
-                    <br>
-                    Journey deep underground with your intrepid companions to uncover the
-                    mysteries of the old world in search of the lost history of the old ones.
-                    The mysteries of the corrupted ruins of the golden age may hold the key
+                    <br>  
+                    Journey deep underground with your intrepid companions to uncover the 
+                    mysteries of the old world in search of the lost history of the old ones.  
+                    The mysteries of the corrupted ruins of the golden age may hold the key 
+
 				to restoring the world to peace and prosperity. </p>
 			</article>
             <!--
                 Create space for user to sign up for newsletter w/ email
 			-->
             <article>
-				<h4>
-					Sign up for our newsletter to receive the latest updates on
+
+				<h4 id="emailLabel">
+					Sign up for our newsletter to receive the latest updates on 
 					<i>Caverns and Creatures</i>!
 					<br>
 				</h4>
                 <form id="newsletterRequest" action="newsletterconfirm.html" novalidate="novalidate">
-                    <fieldset>
+
+                    <fieldset id="emailEntry">
+
 						<div id="errorEmail"></div>
                         <label for="newsEmail">Email:</label><br>
                         <input type="email" id="newsEmail" name="newsletterEmail">
@@ -100,10 +98,12 @@
 						-->
 						<input type="submit" value="Sign Up" id="submitButton" >
 					</fieldset>
+					<div id="emailSuccess" hidden=true><b>Newsletter registration successful! Thank you for signing up.</b></div>
 				</form>
 			</article>
+			
+		</div>   
 
-		</div>
 		<footer>
 			<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
 				<br>
@@ -127,10 +127,9 @@
 	-Added newsletter section. Must decide if submit button should be a
 	regular "button" input or "submit" input for submitting
 
-	(11/18)
-	-Added button to submit form for newsletter sign-up
-	-Added reference to script file: index.js
-
+	(11/28)
+	-Added a favicon
+	
 	Recommendations:
 	CSS
 	-Let's try wrapping the main page content so that it's no longer reaching
@@ -147,3 +146,4 @@
 	-Create new page as confirmation of newsletter registration
 
 -->
+
