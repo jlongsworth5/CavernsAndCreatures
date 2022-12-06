@@ -3,22 +3,17 @@
 	<head>
 		<!--
 			SDEV 265 Final Project
-			
+
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
-			Date:   	11/4/2022
-			
+			Date:   	11/27/2022
+
 			Filename: quiz.html
-			
-			Updates:
-			-Added navigation bar (WIP; L 36)
-			-Added footer (WIP; L 51)			
-			
 		-->
 		<meta charset="utf-8" >
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Caverns and Creatures</title>
-		<link rel="icon" type="image/x-icon" href="images/favicon.ico" > @*Need a favicon*@
-		<link rel="stylesheet" href=".css" >
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico" > <!--Need a favicon-->
+		<link rel="stylesheet" href="css/style.css" >
 		<script src="modernizr.custom.js"></script>
 	</head>
 
@@ -28,30 +23,101 @@
 	<body>
 		<header>
 			<h1>Caverns and Creatures</h1>
-      <h5>Ivy Games</h5>
+			<h5>Ivy Games</h5>
+
+			<nav>
+	      <ul>
+					<li> <a href="index.html">Home</a> </li>
+	        <li> <a href="quiz.html">Quiz</a> </li>
+	        <li> <a href="preorder.html">Order</a> </li>
+				</ul>
+			</nav>
 		</header>
 		<!--
             Create the navigation bar *WIP*
-        -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-                <li><a href="preorder.html">Pre&#8208;order</a></li>
-            </ul>
-        </nav>		
+		-->
 
+
+		<!--
+			Current format of the question form:
+			Labels describing the QUESTION will be for "question#"; # = current question
+			Radio buttons will be labeled "q#answer" to distinguish them as the answer
+			for their given question.
+			Labels for the ANSWER RADIO BUTTONS will be for "q#a$"; $ = answer number
+
+			Additionally, consider where we should include character profiles. Including them
+			at the start is fine, although it may skew the user's answers if they know what
+			class to expect being assigned as before receiving their results
+		-->
 		<div class="main">
-			<article>
+			<!--
+				If we intend to use the "submit" input at the bottom of the quiz,
+				we'll need to specify an action attribute in the "form" element
+				(probably for a page to be linked to, although we'll want the
+				entered information to be checked via JS. Maybe a button that
+				initiates the check is a better decision?) Either way, DO NOT
+				use "GET" when appending a method to the action attribute.
+			-->
+			<form id="quizResults" action="quizresults.html" novalidate="novalidate">
+				<fieldset>
+					<!--
+						The following questions will determine the user's class.
+					-->
+					<h4 id="questionLabel">Start the quiz to find your ideal class and race combination:</h4>
+					<input type="radio" name="answer" id="answer1" value="1" hidden>
+					<label id="answer1Label" for="answer1"></label><br>
+					<input type="radio" name="answer" id="answer2" value="2" hidden>
+					<label id="answer2Label" for="answer1"></label><br>
+					<input type="radio" name="answer" id="answer3" value="3" hidden>
+					<label id="answer3Label" for="answer1"></label><br>
+					<input type="submit" value="Start Quiz" id="submitButton" >
+				</fieldset>
+			</form>
 
-			</article>
-		</div>		
+			<!--
+				Create blank divs that can be used to display the quiz
+				results, after the user finishes answering all questions
+			-->
+			<div id="quizCharResult"></div><br><br>
 
+			<div id="quizRaceResult"></div><br>
+
+		</div>
+
+		<footer>
+			<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
+				<br>
+				Solely for educational purposes.
+			</p>
+		</footer>
+		<script src="quiz.js"></script>
 	</body>
-	<footer>
-		<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
-			<br>
-			Solely for educational purposes.
-		</p>
-	</footer>
 </html>
+<!--
+	Updates:
+	(11/4) Tidied the code a bit & added a submit button to the end of
+	the quiz. Everything else is relatively the same
+	-Added the character race-related portion of the quiz (L 167-228)
+	-Like last update, please note that this is not the definitive quiz format,
+	I remember we talked about possibly showing only one question
+	onscreen, etc; we can change this how we seet fit, it's just to
+	give a rudimentary idea as to how the quiz *could* look like.
+
+	(11/18) Removed a lot of the markup for the questions and added it into quiz.js to make
+	for a more dynamic quiz experience.
+
+	(?) JavaScript referenced. Quiz format edited.
+
+	(11/27)
+	CSS referenced. Nav contents changed to make use of new pictures.
+	Divs added to end of quiz to insert & display chosen results at end
+	of quiz.
+
+	Recommendations:
+	-When we get around to calculating the quiz answers, it may be best to
+	tally up the number of times one question is answered (create
+	3 variables and code the quiz to tally them up each time there's
+	an answer, for example answering question 1 with answer 1 would make
+	"q1Total" +1, etc. Then after calculating them we'll compare them to each
+	other)
+-->

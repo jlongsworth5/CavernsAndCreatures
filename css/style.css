@@ -4,8 +4,8 @@
 }
 
 body{
-  background-image: url(https://www.printawallpaper.com/wp-content/uploads/2020/07/parchment_paper_detail-1.jpg);
-  background-size: auto;
+  background-image: url("https://assets.wallpapersin4k.org/uploads/2017/04/Old-Parchment-Wallpaper-12.jpg");
+  background-size: cover;
 }
 
 h1{
@@ -24,5 +24,40 @@ hr.sep-3 {
 }
 
 p1{
-  font-family: FILL IN FONT HERE!!!!!!!!!!!!!!!!!!!!!!!
+  font-family: "Lucida Handwriting";
+  font-weight: 700;
+}
+
+.preorder{
+  background-image: url("https://getwallpapers.com/wallpaper/full/7/c/d/592661.jpg");
+  background-size: cover;
+  color: white;
+}
+
+
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: linear-gradient(to left, #FF5F00, #B20600);
+  opacity: .75;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 25px 50px;
+  text-decoration: none;
+}
+
+
+nav li a:hover {
+  background-color: #111;
 }
