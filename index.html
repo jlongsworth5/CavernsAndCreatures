@@ -3,19 +3,21 @@
 	<head>		
 		<!--
 			SDEV 265 Final Project
-			
+
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
-			Date:   	11/14/2022
-			
-			Filename: index.html		
+
+			Date:   	11/26/2022
+
+			Filename: index.html
 		-->
 		<meta charset="utf-8" >
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Caverns and Creatures</title>
+
 		<link rel="icon" type="image/x-icon" href="favicon.ico" >
 		<link rel="stylesheet" href="css/style.css" >	
 	</head>
-	
+
 	<!--
 		The main page of the site will introduce customers to Ivy Games and the Caverns and Creatures game.
 	-->
@@ -27,18 +29,15 @@
 			<h1>Caverns and Creatures</h1>
 			<h5>Ivy Games</h5>
 				<hr class="sep-3"/>
-		</header>		
+		</header>
 		<!--
             Create the navigation bar *WIP*
 		-->
-        <nav>
-            <ul>
-                <li><a href="index.html"></a><img src="css/pictures/homeButton.jpg" width="450" height="150"></li>
-                <li><a href="quiz.html"><img src="css/pictures/characters.jpg" width="450" height="150"></a></li>
-                <li><a href="preorder.html"><img src="css/pictures/preorder.jpg" width="450" height="150"></a></li>
-			</ul>
-		</nav>
-		
+		<ul>
+			<li><a href="index.html"></a><img src="css/pictures/homeButton.jpg" width="450" height="150"></li>
+			<li><a href="quiz.html"><img src="css/pictures/characters.jpg" width="450" height="150"></a></li>
+			<li><a href="preorder.html"><img src="css/pictures/preorder.jpg" width="450" height="150"></a></li>
+		</ul>
 		<div class="main">
             <!--
                 Create a short blurb explaining the website
@@ -56,6 +55,7 @@
 			-->
             <article>
                 <h4>Game Description:</h4>
+
                 <p>In <i>Caverns and Creatures</i>, embark on an adventure under the wing of your 
                     Lore-Master or with one of our trained and experienced team members at 
                     in person or online live events with Ivy Games.  Immerse yourself in a 
@@ -72,19 +72,23 @@
                     Journey deep underground with your intrepid companions to uncover the 
                     mysteries of the old world in search of the lost history of the old ones.  
                     The mysteries of the corrupted ruins of the golden age may hold the key 
+
 				to restoring the world to peace and prosperity. </p>
 			</article>
             <!--
                 Create space for user to sign up for newsletter w/ email
 			-->
             <article>
+
 				<h4 id="emailLabel">
 					Sign up for our newsletter to receive the latest updates on 
 					<i>Caverns and Creatures</i>!
 					<br>
 				</h4>
                 <form id="newsletterRequest" action="newsletterconfirm.html" novalidate="novalidate">
+
                     <fieldset id="emailEntry">
+
 						<div id="errorEmail"></div>
                         <label for="newsEmail">Email:</label><br>
                         <input type="email" id="newsEmail" name="newsletterEmail">
@@ -99,6 +103,7 @@
 			</article>
 			
 		</div>   
+
 		<footer>
 			<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
 				<br>
@@ -107,7 +112,7 @@
 		</footer>
 		<script src="index.js"></script>
 	</body>
-    
+
 </html>
 
 <!--
@@ -121,11 +126,7 @@
 	(11/14)
 	-Added newsletter section. Must decide if submit button should be a
 	regular "button" input or "submit" input for submitting
-	
-	(11/18)
-	-Added button to submit form for newsletter sign-up
-	-Added reference to script file: index.js
-	
+
 	(11/28)
 	-Added a favicon
 	
@@ -136,12 +137,13 @@
 	-Navigation bar: decide whether to keep vertical or change to horizontal
 	-Give footer a little space from the end of the main page content & bottom
 	of page. Also consider centering its content (same for horizontal Nav bar)
-	
+
 	JavaScript
 	-Scripting for newsletter section to verify a correct email address
 	is entered
-	
+
 	HTML
 	-Create new page as confirmation of newsletter registration
-	
+
 -->
+

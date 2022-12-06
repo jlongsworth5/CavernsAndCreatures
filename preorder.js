@@ -2,6 +2,7 @@
 	DEV 265 Final Project
 	
 	Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
+
 	Date:   	12/1/2022
 	Filename: preorder.js
 	Updates:
@@ -37,7 +38,9 @@ function setupPage()
 	document.getElementById("cardExpYear").value = currentDate.getFullYear();	
 }
 
+
 // Checks that the address is filled in and of an acceptable format
+
 function validateAddress()
 {
 	var inputElements = document.querySelectorAll("#addressInfo input");
@@ -79,6 +82,7 @@ function validateAddress()
 		formValidity = false;
 	}
 }
+
 
 // Confirms that a valid credit card number and cvv code are entered
 function validatePayment()
@@ -127,11 +131,14 @@ function validatePayment()
 	}
 }
 
+
 // Checks the entered card number against regex values for the four major card types allowable numbers
+
 function validateCardNumber()
 {	
 	var cardNumber = document.getElementById("cardNumber").value;
 	var cardProvider = document.getElementById("cardProvider");
+
 	//T: First number in credit card # must match the one specified
 	// in the visa, mc, discover, & amex variables below
 	// ("/^#"; e.x. visa starts with 4).
@@ -141,8 +148,7 @@ function validateCardNumber()
 	var mc = /^5[1-5][0-9]{14}$/;
 	//T: Discover must start with "6011"
 	var discover = /^6(?:011|5[0-9]{2})[0-9]{12}$/;
-	//T: American Express must start with "347" and only has 15 digits
-	
+	//T: American Express must start with "347" and only has 15 digits	
 	var amex = /^3[47][0-9]{13}$/;
 	var requiredValidity = false;
 	
@@ -183,7 +189,7 @@ function validateForm(evt)
 	formValidity = true;	
 	validateAddress();
 	validatePayment();
-	
+
 	//WHERE TO PUT THIS SO THAT IT ONLY CONTINUES IF NO ERRORS?
 	sendJsonToApi();
 	
