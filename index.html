@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>		
+	<head>
 		<!--
 			SDEV 265 Final Project
 
@@ -31,25 +31,31 @@
     <!--
         Where is the main element? We may want to make it a parent of the div or article elements
 	-->
-	<body>
+	<body class="indexBody">
 		<header>
-			<h1>Caverns and Creatures</h1>
-			<h5>Ivy Games</h5>
-				<hr class="sep-3"/>
+				<div class="pageTop">
+					<h1>Caverns and Creatures</h1>
+					<h5>Ivy Games</h5>
+					<hr class="sep-3"/>
+					<nav>
+						<ul>
+							<li> <a href="index.html">Home</a> </li>
+			        <li> <a href="quiz.html">Quiz</a> </li>
+			        <li> <a href="preorder.html">Order</a> </li>
+							<li> <a href="browseCharacters.html">Class List</a> </li>
+						</ul>
+					</nav>
+				</div>
 		</header>
 		<!--
             Create the navigation bar *WIP*
 		-->
-		<ul>
-			<li><a href="index.html"></a><img src="css/pictures/homeButton.jpg" width="450" height="150"></li>
-			<li><a href="quiz.html"><img src="css/pictures/characters.jpg" width="450" height="150"></a></li>
-			<li><a href="preorder.html"><img src="css/pictures/preorder.jpg" width="450" height="150"></a></li>
-		</ul>
+
 		<div class="main">
             <!--
                 Create a short blurb explaining the website
 			-->
-			<article>
+			<article class="cursive">
 				<h4>Welcome</h4>
 				<p>Hello, and welcome to the homepage for the <i>Caverns and Creatures</i> website!
                     Here you can find some information regarding the upcoming game, try the
@@ -57,38 +63,41 @@
                     your character, pre-order the game, and more.
 				</p>
 			</article>
+
+
             <!--
                 Display a description of the game so the user can learn more about it
 			-->
-            <article>
+            <article class="cursive">
                 <h4>Game Description:</h4>
 
-                <p>In <i>Caverns and Creatures</i>, embark on an adventure under the wing of your 
-                    Lore-Master or with one of our trained and experienced team members at 
-                    in person or online live events with Ivy Games.  Immerse yourself in a 
+                <p>In <i>Caverns and Creatures</i>, embark on an adventure under the wing of your
+                    Lore-Master or with one of our trained and experienced team members at
+                    in person or online live events with Ivy Games.  Immerse yourself in a
 				magical world that has been enraptured by an ancient curse.  </p>
-                <p><i>Caverns and Creatures</i> takes players into the winding depths of the 
-                    buried old world in search of solutions to a blight on the world of 
-                    Sandalia.  Magic once fueled the blossom of a prosperous golden age 
-                    for the diverse races of the world, but that magic has begun to tear 
-                    at the world, creating tears in reality allowing denizens of strange 
-                    and often hostile realms to warp the world around them.  Those with 
-                    access to protective magic retreated into safe isolation leaving most 
+                <p><i>Caverns and Creatures</i> takes players into the winding depths of the
+                    buried old world in search of solutions to a blight on the world of
+                    Sandalia.  Magic once fueled the blossom of a prosperous golden age
+                    for the diverse races of the world, but that magic has begun to tear
+                    at the world, creating tears in reality allowing denizens of strange
+                    and often hostile realms to warp the world around them.  Those with
+                    access to protective magic retreated into safe isolation leaving most
                     to fend for themselves without the means to combat the changing world.
-                    <br>  
-                    Journey deep underground with your intrepid companions to uncover the 
-                    mysteries of the old world in search of the lost history of the old ones.  
-                    The mysteries of the corrupted ruins of the golden age may hold the key 
+                    <br>
+                    Journey deep underground with your intrepid companions to uncover the
+                    mysteries of the old world in search of the lost history of the old ones.
+                    The mysteries of the corrupted ruins of the golden age may hold the key
 
 				to restoring the world to peace and prosperity. </p>
 			</article>
+
             <!--
                 Create space for user to sign up for newsletter w/ email
 			-->
             <article>
 
 				<h4 id="emailLabel">
-					Sign up for our newsletter to receive the latest updates on 
+					Sign up for our newsletter to receive the latest updates on
 					<i>Caverns and Creatures</i>!
 					<br>
 				</h4>
@@ -108,8 +117,8 @@
 					<div id="emailSuccess" hidden=true><b>Newsletter registration successful! Thank you for signing up.</b></div>
 				</form>
 			</article>
-			
-		</div>   
+
+		</div>
 
 		<footer>
 			<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
@@ -136,7 +145,7 @@
 
 	(11/28)
 	-Added a favicon
-	
+
 	Recommendations:
 	CSS
 	-Let's try wrapping the main page content so that it's no longer reaching
@@ -153,4 +162,3 @@
 	-Create new page as confirmation of newsletter registration
 
 -->
-

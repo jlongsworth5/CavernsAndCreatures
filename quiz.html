@@ -7,7 +7,7 @@
 			Author: 	Ben Webb, Tyler Smekens, Jeff Longsworth
 
 			Date:   	12/1/2022
-			
+
 			Filename: quiz.html
 		-->
 		<meta charset="utf-8" >
@@ -18,11 +18,9 @@
 		<link rel="stylesheet" href="css/style.css" >
 
 	</head>
-	
-	<!--
-		This page is where the Caverns and Creatures promotional website's quiz will be honsted.
-	-->
-	<body>
+
+
+	<body class="quizBody">
 		<header>
 			<h1>Caverns and Creatures</h1>
 			<h5>Ivy Games</h5>
@@ -31,61 +29,43 @@
 					<li> <a href="index.html">Home</a> </li>
 	        <li> <a href="quiz.html">Quiz</a> </li>
 	        <li> <a href="preorder.html">Order</a> </li>
+					<li> <a href="browseCharacters.html">Class List</a> </li>
 				</ul>
 			</nav>
-
+			<img class="navImage" src="css\pictures\characters.jpg" alt="navImage">
 		</header>
-		<!--
-            Create the navigation bar *WIP*
-		-->
-		<!--
-			Current format of the question form:
-			Labels describing the QUESTION will be for "question#"; # = current question
-			Radio buttons will be labeled "q#answer" to distinguish them as the answer
-			for their given question.
-			Labels for the ANSWER RADIO BUTTONS will be for "q#a$"; $ = answer number
 
+		<div class="quizMain">
+			<div class="quizBox">
+				<!--<img src="css/pictures/characters.jpg" alt="character-pictures" >-->
+				<form id="questions" novalidate="novalidate">
+					<fieldset class="quizFields">
+							<!--
+								The following questions will determine the user's class.
+							-->
+							<h4 id="questionLabel">Start the quiz to find your ideal class and race combination:</h4>
+							<input type="radio" name="answer" id="answer1" value="1" hidden>
+							<label id="answer1Label" for="answer1"></label><br>
+							<input type="radio" name="answer" id="answer2" value="2" hidden>
+							<label id="answer2Label" for="answer1"></label><br>
+							<input type="radio" name="answer" id="answer3" value="3" hidden>
+							<label id="answer3Label" for="answer1"></label><br>
 
-			Additionally, consider where we should include character profiles. Including them
-			at the start is fine, although it may skew the user's answers if they know what
-			class to expect being assigned as before receiving their results
-		-->
-		<div class="main">
-			<!--
-				If we intend to use the "submit" input at the bottom of the quiz,
-				we'll need to specify an action attribute in the "form" element
-				(probably for a page to be linked to, although we'll want the
-				entered information to be checked via JS. Maybe a button that
-				initiates the check is a better decision?) Either way, DO NOT
-				use "GET" when appending a method to the action attribute.
-			-->
+							<input type="submit" value="Start Quiz" id="submitButton" >
+						</fieldset>
+					</form>
 
-			<form id="questions" novalidate="novalidate">
-				<fieldset>
-					<!--
-						The following questions will determine the user's class.
-					-->
-					<h4 id="questionLabel">Start the quiz to find your ideal class and race combination:</h4>
-					<input type="radio" name="answer" id="answer1" value="1" hidden>
-					<label id="answer1Label" for="answer1"></label><br>
-					<input type="radio" name="answer" id="answer2" value="2" hidden>
-					<label id="answer2Label" for="answer1"></label><br>
-					<input type="radio" name="answer" id="answer3" value="3" hidden>
-					<label id="answer3Label" for="answer1"></label><br>
+				<div id="quizResults" hidden=true>
+					<!--<img id="classImage"</img>-->
+					<b id="quizCharResult" ></b><br><br>
 
-					<input type="submit" value="Start Quiz" id="submitButton" >					
-				</fieldset>
-			</form>
-			
-			<div id="quizResults" hidden=true>
-				<!--<img id="classImage"</img>-->
-				<b id="quizCharResult" ></b><br><br>
-
-				<!--<img id="raceImage"></img>-->
-				<b id="quizRaceResult" ></b><br>
+					<!--<img id="raceImage"></img>-->
+					<b id="quizRaceResult" ></b><br>
+				</div>
 			</div>
-			
-		</div>		
+
+
+		</div>
 
 		<footer>
 			<p>-WIP- By Jeffery Longsworth, Tyler Smekens, & Ben Webb
@@ -119,7 +99,7 @@
 
 	(11/28)
 	-Added a favicon
-	
+
 
 	Recommendations:
 	-When we get around to calculating the quiz answers, it may be best to
