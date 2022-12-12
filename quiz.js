@@ -58,9 +58,13 @@ const classText = new Array('Warrior: The Warrior is a skilled combatant whose t
 	'Cleric: The Cleric uses deep knowledge of the world, both magic and mundane, to find solutions to overcome challenge. "Power comes not from the tip of the spear, but from the wise application of its user."',
 'Chaplain: Chaplains are the spiritual leaders of the people; warrior monks who inspire others and wield great powers of influence. "Legends will be made of our faith, our strength, our mission!"');
 
-const raceText = new Array('Human: Humans are a diverse group who occupy all levels of society, possessing significant martial, political, and economic power world-wide and able to use magic using totems imbued with their spirit. Humans have a rich and varied history that spans the globe and influences all things in their world with vast empires that each have unique cultures, militaries, and lives. Able to appeal to many across the world, humans are solid all-rounders who can excel in any role. ',
+const raceText = new Array('Human: Humans are a diverse group who occupy all levels of society, possessing significant martial, political, and economic power world-wide and able to use magic using totems imbued with their spirit. Humans have a rich and varied history that spans the globe and influences all things in their world with vast empires that each have unique cultures, militaries, and lives. Able to appeal to many across the world, humans are solid all-rounders who can excel in any role. ',	
 	'Sindari: respected everywhere, Sindari society stems from a cultured past built on their innate ability to control magic. They view the world through a philosophy of "Three Pillars": the way of the warrior, the wisdom of the teacher, and the spirit of the divine. They can live for hundreds of years and spend their lives in long phases where they strive to reach proficiency in each pillar. They are revered for their skills and can often be found in high places of society or are sought out for their prowess in specific areas; where there is challenge, there is a Sindari seeking to master it. ',
 'Baluk: Organized into small tribes scattered across the untamed lands between population centers, the Baluk are rugged and renowned for their knowledge of survival and warfare which is magically transposed intergenerationally each time a Baluk overcomes challenges. They organize their lives around trials of "the Calmur" where adolescents embark on a pilgrimage to unlock their generational memories before returning to their clans. Baluk are strong and skilled; aspirants of pilgrimage often accompany adventurers and can draw on generational wisdom from those in their clans even when far apart. ');
+
+const characterImages = new Array("Human_warrior_female.jpg", "human_warrior_male.jpg", "human_cleric_female.jpg", "human_cleric_male.png", "human_chaplain_female.jpg", "human_chaplain_male.jpg",
+"sindari_warrior_female.jpg", "Sindari_warrior_male.jpg", "sindari_cleric_female.jpg", "sindari_cleric_male.jpg", "sindari_chaplain_female.jpg", "sindari_chaplain_male.png",
+"baluk_warrior_female.jpg", "baluk_warrior_male.jpg", "baluk_cleric_female.jpg", "baluk_cleric_male.jpg", "baluk_chaplain_female.jpg", "baluk_chaplain_male.jpg");
 
 /* Global variables */
 var questionIndex = 0;
@@ -70,6 +74,10 @@ var raceTotals = new Array(0, 0, 0);
 function setupPage()
 {
 	document.getElementById("submitButton").action = startQuiz();
+	document.getElementById("imageOne").hidden = true;
+	document.getElementById("imageOne").src = "";
+	document.getElementById("imageTwo").hidden = true;
+	document.getElementById("imageTwo").src = "";
 }
 
 function startQuiz(evt)
@@ -205,14 +213,90 @@ function getQuizResults()
 	
 	document.getElementById("quizCharResult").innerHTML = classText[classIndex];
 	document.getElementById("quizRaceResult").innerHTML = raceText[raceIndex];
+	return new Array(classIndex, raceIndex);
 }
 
 // Hides the quiz and displays the user's results.
 function showResults()
 {	
-	getQuizResults();
+	var resultsIndexes = getQuizResults();
+	displayImages(resultsIndexes);
 	document.getElementById("questions").hidden = true;
 	document.getElementById("quizResults").hidden = false;
+}
+
+/* Shows the images which match the user's selected class/race */
+function displayImages(resultsIndexes)
+{
+	var imageOne = document.getElementById("imageOne");
+	var imageTwo = document.getElementById("imageTwo");
+	
+	var classIndex = resultsIndexes[0];
+	var raceIndex = resultsIndexes[1];
+	
+	var imageOneSrc = 0;
+	var imageTwoSrc = 0;
+	
+	if (classIndex === 0 && raceIndex === 0)
+	{
+		// human warrior
+		imageOneSrc = characterImages[0];
+		imageTwoSrc = characterImages[1];
+	}
+	else if (classIndex === 1 && raceIndex === 0)
+	{
+		// human cleric
+		imageOneSrc = characterImages[2];
+		imageTwoSrc = characterImages[3];
+	}
+	else if (classIndex === 2 && raceIndex === 0)
+	{
+		// human chaplain
+		imageOneSrc = characterImages[4];
+		imageTwoSrc = characterImages[5];
+	}
+	else if (classIndex === 0 && raceIndex === 1)
+	{
+		// sindari warrior
+		imageOneSrc = characterImages[6];
+		imageTwoSrc = characterImages[7];
+	}
+	else if (classIndex === 1 && raceIndex === 1)
+	{
+		// sindari cleric
+		imageOneSrc = characterImages[8];
+		imageTwoSrc = characterImages[9];
+	}
+	else if (classIndex === 2 && raceIndex === 1)
+	{
+		// sindari chaplain
+		imageOneSrc = characterImages[10];
+		imageTwoSrc = characterImages[11];
+	}
+	else if (classIndex === 0 && raceIndex === 2)
+	{
+		// baluk warrior
+		imageOneSrc = characterImages[12];
+		imageTwoSrc = characterImages[13];
+	}
+	else if (classIndex === 1 && raceIndex === 2)
+	{
+		// baluk cleric
+		imageOneSrc = characterImages[14];
+		imageTwoSrc = characterImages[15];
+	}
+	else if (classIndex === 2 && raceIndex === 2)
+	{
+		// baluk chaplain
+		imageOneSrc = characterImages[16];
+		imageTwoSrc = characterImages[17];
+	}
+	
+	imageOne.src = "images\\" + imageOneSrc;
+	imageOne.hidden = false;
+	
+	imageTwo.src = "images\\" + imageTwoSrc;
+	imageTwo.hidden = false;
 }
 
 /* create event listeners */
